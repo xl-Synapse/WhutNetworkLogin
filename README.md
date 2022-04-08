@@ -3,5 +3,5 @@
 # 使用方法
 在`whut.edu/user.hcy`中填入账号密码即可，如：
 ```
-花生酱啊啊啊啊: username=<id card>;password=<your password>;
+花生酱啊啊啊啊（不能改）: username=<id card>;password=<your password>;
 ```
