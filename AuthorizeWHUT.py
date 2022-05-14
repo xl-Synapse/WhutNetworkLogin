@@ -73,7 +73,7 @@ class AuthorizeManager(BaseTask):
         有时候是自动302
         有时候是html的跳转代码
         """
-        r = self._verify_network()
+        r = requests.get('http://1.1.1.1')
         if r.history:
             # 302
             return r.url
@@ -81,8 +81,11 @@ class AuthorizeManager(BaseTask):
             return re.search(r'(https*://.*)\'', r.text).group(1)
 
     def verify_network(self):
-        data = self._verify_network()
-        return data.status_code == 204 if data else False
+        try:
+            data = self._verify_network()
+            return data.status_code == 204 if data else False
+        except:
+            return False
 
     @staticmethod
     def _verify_network():
